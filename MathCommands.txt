@@ -1,17 +1,22 @@
 Some ideas for the library: 
 
 incomplete: 
-- get the remainder 
 - solution to linear diophantine equation 
 - solve linear congruences
 - prime number identifier 
 - factorial 
-- gcd 
 - prime factorization 
-- quadratic formula 
 - mean calculator 
 - median calculator
 - mode calculator
 - solve simultaneous congruences 
+- linear intersection 
+- distance between points
+- pythagorean theorem 
 
-complete: 
+
+complete:
+- remainder 
+- eea 
+- gcd
+-quadratic formula
