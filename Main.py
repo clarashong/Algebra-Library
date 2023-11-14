@@ -7,19 +7,20 @@ def remainder(num, div) :
 # gcd(a,b) returns the greatest common divisor of a and b
 def gcd (a, b) :
     if (a > b) :
-        eea([1,0,a,0],[0,1,b,0])[2]
+        return eea([1,0,a,0],[0,1,b,0])[2]
     else :
-        eea([1,0,b,0],[0,1,a,0])[2]
+        return eea([1,0,b,0],[0,1,a,0])[2]
 
 #eea(r1, r2) uses the euclidean algorithm; returns the entire row
 def eea (r1, r2) :
-    if (r2[2] % r1[2] == 0):
+    if (r1[2] % r2[2] == 0):
         return r1
     else:
-        x = r1[0] - r2[0]
-        y = r1[1] - r2[1]
+        q = r1[2] // r2[2]
+        x = r1[0] - r2[0]*q
+        y = r1[1] - r2[1]*q
         r = r1[2] % r2[2]
-        q = r1[3] // r2[3]
+
         newRow = [x,y,r,q]
         eea (r2, newRow)
 
@@ -66,8 +67,18 @@ def median (lon) :
     if (len(lon) % 2 == 1) : 
         return lon[mid]
     else : 
-        
         return (lon[mid-1]+lon[mid])/2
+    
+def hypotenuse(a,b): 
+    return (a**2 + b**2) ** 0.5
+
+def distBetweenPoints(p1, p2): 
+    deltax = (p2[0] - p1[0])
+    deltay = (p2[1] - p2[1])
+    return hypotenuse(deltax, deltay)
+
+
+
 
                 
 

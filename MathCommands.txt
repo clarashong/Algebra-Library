@@ -8,9 +8,6 @@ incomplete:
 - prime factorization 
 - solve simultaneous congruences 
 - linear intersection 
-- distance between points
-- pythagorean theorem 
-
 
 complete:
 - remainder 
@@ -20,3 +17,5 @@ complete:
 - mean calculator 
 - mode calculator
 - median calculator
+- hypotenuse finder (right triangles)
+- distance between points
