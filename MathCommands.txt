@@ -6,9 +6,6 @@ incomplete:
 - prime number identifier 
 - factorial 
 - prime factorization 
-- mean calculator 
-- median calculator
-- mode calculator
 - solve simultaneous congruences 
 - linear intersection 
 - distance between points
@@ -19,4 +16,7 @@ complete:
 - remainder 
 - eea 
 - gcd
--quadratic formula
+- quadratic formula
+- mean calculator 
+- mode calculator
+- median calculator

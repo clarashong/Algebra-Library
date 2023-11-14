@@ -30,5 +30,48 @@ def quadraticFormula (a,b,c):
     result2 = -b + math.sqrt(pow(b) - 4*a*c)
 
     return (result1 / 2*a), (result2/ 2*a)
+
+# mean(lon) finds the mean value from a list of numbers
+# returns average
+def mean (lon) :
+    sum = 0
+    for n in lon: 
+        sum += n
+    return sum/len(lon)
+
+# mode(lon) find the mode, or the element with the most occurences, from a list of numbers. 
+# 
+def mode (lon) : 
+    maxCount = 0
+    numSet = {}
+    dict = {} 
+    for n in lon: 
+        if (dict.get(n) == None) : 
+            dict.update(n,1)
+        else: 
+            dict.update(n, dict.get(n) + 1)
+
+        if (dict.get(n) == maxCount) : 
+            numSet.add(n)
+        elif (dict.get(n) > maxCount) : 
+            numSet.clear()
+            numSet.add(n)
+            maxCount = dict.get(n)
+
+# median(lon) calculates the median
+# list of numbers -> number
+def median (lon) : 
+    lon.sort()
+    mid = int(len(lon)/2)
+    if (len(lon) % 2 == 1) : 
+        return lon[mid]
+    else : 
+        
+        return (lon[mid-1]+lon[mid])/2
+
+                
+
+
+    
     
     
