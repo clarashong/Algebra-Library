@@ -1,15 +1,22 @@
 import math
 
+
 # remainder(num,div) returns the remainder when num is divided by div
 def remainder(num, div) :
     return num % div
 
 # gcd(a,b) returns the greatest common divisor of a and b
 def gcd (a, b) :
+    row = []
     if (a > b) :
-        return eea([1,0,a,0],[0,1,b,0])[2]
+        row =  eea([1,0,a,0],[0,1,b,0])
+        if (row != None): 
+            return row[2]
     else :
-        return eea([1,0,b,0],[0,1,a,0])[2]
+        row =  eea([1,0,b,0],[0,1,a,0])
+        if (row != None): 
+            return row[2]
+    return None
 
 #eea(r1, r2) uses the euclidean algorithm; returns the entire row
 def eea (r1, r2) :
