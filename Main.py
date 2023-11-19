@@ -7,12 +7,16 @@ def remainder(num, div) :
 
 # gcd(a,b) returns the greatest common divisor of a and b
 def gcd (a, b) :
-    row = []
     if (a > b) :
-        row =  eea([1,0,a,0],[0,1,b,0])     
+        if (row == None) :
+            return "row has no answer???"
+        row =  eea([1,0,a,0],[0,1,b,0])   
+        return row[2]  
     else :
-        row =  eea([1,0,b,0],[0,1,a,0])    
-    return row[2]
+        row =  eea([1,0,b,0],[0,1,a,0]) 
+        if (row == None) :
+            return "row has no answer???"  
+        return row[2]
 
 #eea(r1, r2) uses the euclidean algorithm; returns the entire row
 def eea (r1, r2) :
@@ -25,7 +29,6 @@ def eea (r1, r2) :
         x = r1[0] - r2[0]*q
         y = r1[1] - r2[1]*q
         r = r1[2] % r2[2]
-
         newRow = [x,y,r,q]
         eea (r2, newRow)
 
@@ -53,9 +56,9 @@ def mode (lon) :
     dict = {} 
     for n in lon: 
         if (dict.get(n) == None) : 
-            dict.update(n,1)
+            dict[n] = 1
         else: 
-            dict.update(n, dict.get(n) + 1)
+            dict[n]= dict.get(n) + 1
 
         if (dict.get(n) == maxCount) : 
             numSet.add(n)
