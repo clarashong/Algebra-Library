@@ -82,7 +82,7 @@ def hypotenuse(a,b):
 
 def distBetweenPoints(p1, p2): 
     deltax = (p2[0] - p1[0])
-    deltay = (p2[1] - p2[1])
+    deltay = (p2[1] - p1[1])
     return hypotenuse(deltax, deltay)
 
 def solveLDE(a,b,d): 
