@@ -9,17 +9,15 @@ def remainder(num, div) :
 def gcd (a, b) :
     row = []
     if (a > b) :
-        row =  eea([1,0,a,0],[0,1,b,0])
-        if (row != None): 
-            return row[2]
+        row =  eea([1,0,a,0],[0,1,b,0])     
     else :
-        row =  eea([1,0,b,0],[0,1,a,0])
-        if (row != None): 
-            return row[2]
-    return None
+        row =  eea([1,0,b,0],[0,1,a,0])    
+    return row[2]
 
 #eea(r1, r2) uses the euclidean algorithm; returns the entire row
 def eea (r1, r2) :
+    r1 = list(r1)
+    r2 = list(r2)
     if (r1[2] % r2[2] == 0):
         return r1
     else:
@@ -83,6 +81,14 @@ def distBetweenPoints(p1, p2):
     deltax = (p2[0] - p1[0])
     deltay = (p2[1] - p2[1])
     return hypotenuse(deltax, deltay)
+
+def solveLDE(a,b,d): 
+    if (d % gcd(a,b) != 0) :
+        return False
+    else: 
+        factor = int(d/gcd(a,b))
+        result = eea([1,0,a,0],[0,1,b,0])
+        return (result[0] * factor, result[1] * factor)
 
 
 
