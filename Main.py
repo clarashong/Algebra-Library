@@ -7,16 +7,14 @@ def remainder(num, div) :
 
 # gcd(a,b) returns the greatest common divisor of a and b
 def gcd (a, b) :
-    if (a > b) :
-        if (row == None) :
-            return "row has no answer???"
-        row =  eea([1,0,a,0],[0,1,b,0])   
-        return row[2]  
-    else :
-        row =  eea([1,0,b,0],[0,1,a,0]) 
+    row = []
+    if (a > b) : 
+        row =  eea([1,0,a,0],[0,1,b,0]) 
         if (row == None) :
             return "row has no answer???"  
-        return row[2]
+        return row[2]  
+    else :  
+        return gcd(b,a)
 
 #eea(r1, r2) uses the euclidean algorithm; returns the entire row
 def eea (r1, r2) :
