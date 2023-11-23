@@ -91,6 +91,12 @@ def solveLDE(a,b,d):
         result = eea([1,0,a,0],[0,1,b,0])
         return (result[0] * factor, result[1] * factor)
 
+def factorial(x): 
+    product = 1
+    for i in range (1, x+1): 
+        product *= i
+    return product
+
 
 
 
