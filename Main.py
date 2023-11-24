@@ -1,5 +1,9 @@
 import math
 
+def main():
+    print (gcd(8, 10))
+
+
 
 # remainder(num,div) returns the remainder when num is divided by div
 def remainder(num, div) :
@@ -7,14 +11,12 @@ def remainder(num, div) :
 
 # gcd(a,b) returns the greatest common divisor of a and b
 def gcd (a, b) :
-    row = []
-    if (a > b) : 
-        row =  eea([1,0,a,0],[0,1,b,0]) 
-        if (row == None) :
-            return "row has no answer???"  
-        return row[2]  
-    else :  
+    if (a < b): 
         return gcd(b,a)
+    elif (a % b == 0) :
+        return b
+    else : 
+        return gcd(b, a % b)
 
 #eea(r1, r2) uses the euclidean algorithm; returns the entire row
 def eea (r1, r2) :
@@ -28,7 +30,7 @@ def eea (r1, r2) :
         y = r1[1] - r2[1]*q
         r = r1[2] % r2[2]
         newRow = [x,y,r,q]
-        eea (r2, newRow)
+        return eea (r2, newRow)
 
 # quadraticFormula solves an equation in the form (ax^2 + bx+ c = 0)
 # returns tuple with the 2 possible x values 
@@ -97,8 +99,8 @@ def factorial(x):
         product *= i
     return product
 
-
-
+if __name__ == "__main__":
+    main()
 
                 
 
